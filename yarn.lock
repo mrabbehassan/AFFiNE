@@ -476,6 +476,7 @@ __metadata:
     "@electron-forge/core-utils": "npm:^7.3.0"
     "@electron-forge/maker-deb": "npm:^7.3.0"
     "@electron-forge/maker-dmg": "npm:^7.3.0"
+    "@electron-forge/maker-snap": "npm:^7.5.0"
     "@electron-forge/maker-squirrel": "npm:^7.3.0"
     "@electron-forge/maker-zip": "npm:^7.3.0"
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.3.0"
@@ -492,6 +493,7 @@ __metadata:
     builder-util-runtime: "npm:^9.2.5-alpha.2"
     cross-env: "npm:^7.0.3"
     electron: "npm:^32.0.0"
+    electron-installer-snap: "patch:electron-installer-snap@npm%3A5.2.0#~/.yarn/patches/electron-installer-snap-npm-5.2.0-384ed6ec1f.patch"
     electron-log: "npm:^5.1.2"
     electron-squirrel-startup: "npm:1.0.1"
     electron-updater: "npm:^6.2.1"
@@ -3378,6 +3380,20 @@ __metadata:
     electron-installer-dmg:
       optional: true
   checksum: 10/c6e148e499a5922694bba8406b3e36de312ba552a5debd436084a77cecceee089523766b9c8598f93cad4ff7db89e0bb907703fa43c484050a979407c994adc6
+  languageName: node
+  linkType: hard
+
+"@electron-forge/maker-snap@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "@electron-forge/maker-snap@npm:7.5.0"
+  dependencies:
+    "@electron-forge/maker-base": "npm:7.5.0"
+    "@electron-forge/shared-types": "npm:7.5.0"
+    electron-installer-snap: "npm:^5.2.0"
+  dependenciesMeta:
+    electron-installer-snap:
+      optional: true
+  checksum: 10/065cecac1a9f9f01769e434bd58c2765f66b5a0edf30bd5a6a8688290db980f4f9725fcffbe772f1040d2b588556f8b69a38db776ac8d530e92dc588e3c593b5
   languageName: node
   linkType: hard
 
@@ -18642,6 +18658,46 @@ __metadata:
   bin:
     electron-installer-dmg: dist/electron-installer-dmg-bin.js
   checksum: 10/2dfd95297b8c984b77eac989d877b259fd303cf9bbf4aee32af235ed642991e9da609e520ada1fd52068ecca832f7f8a2e5f720a09d3efca00349210b57aeffc
+  languageName: node
+  linkType: hard
+
+"electron-installer-snap@npm:5.2.0":
+  version: 5.2.0
+  resolution: "electron-installer-snap@npm:5.2.0"
+  dependencies:
+    "@malept/cross-spawn-promise": "npm:^1.0.0"
+    debug: "npm:^4.3.4"
+    electron-installer-common: "npm:^0.10.2"
+    fs-extra: "npm:^9.0.0"
+    js-yaml: "npm:^3.10.0"
+    lodash: "npm:^4.17.15"
+    semver: "npm:^7.1.1"
+    tmp-promise: "npm:^3.0.2"
+    which: "npm:^2.0.1"
+    yargs: "npm:^16.0.2"
+  bin:
+    electron-installer-snap: src/cli.js
+  checksum: 10/e60c9bc9e449674d68fd510c4b7843457a85bb88bbaa52d5afa3beffbe481b279298c629efcd009482a69d7862f63945a0a9e2cccda957cb665d352ce53de64d
+  languageName: node
+  linkType: hard
+
+"electron-installer-snap@patch:electron-installer-snap@npm%3A5.2.0#~/.yarn/patches/electron-installer-snap-npm-5.2.0-384ed6ec1f.patch":
+  version: 5.2.0
+  resolution: "electron-installer-snap@patch:electron-installer-snap@npm%3A5.2.0#~/.yarn/patches/electron-installer-snap-npm-5.2.0-384ed6ec1f.patch::version=5.2.0&hash=efd79a"
+  dependencies:
+    "@malept/cross-spawn-promise": "npm:^1.0.0"
+    debug: "npm:^4.3.4"
+    electron-installer-common: "npm:^0.10.2"
+    fs-extra: "npm:^9.0.0"
+    js-yaml: "npm:^3.10.0"
+    lodash: "npm:^4.17.15"
+    semver: "npm:^7.1.1"
+    tmp-promise: "npm:^3.0.2"
+    which: "npm:^2.0.1"
+    yargs: "npm:^16.0.2"
+  bin:
+    electron-installer-snap: src/cli.js
+  checksum: 10/677083717dd78d98492f7cdb878ff1150da2584e06837e204c47533ba8fa826783dbc3be951304fe212df1ab993b85d6ded5c0b6416aeb10a11e9c6ee7e8dd11
   languageName: node
   linkType: hard
 

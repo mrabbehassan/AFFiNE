@@ -88,6 +88,18 @@ const makers = [
       ],
     },
   },
+  !process.env.SKIP_BUNDLE && {
+    name: '@electron-forge/maker-snap',
+    platforms: ['linux'],
+    /** @type {import('@electron-forge/maker-snap').MakerSnapConfig} */
+    config: {
+      grade: buildType === 'stable' ? 'stable' : 'devel',
+      features: {
+        webgl: true,
+      },
+      base: 'core22',
+    },
+  },
 ].filter(Boolean);
 
 /**

@@ -1,0 +1,41 @@
+diff --git a/resources/strict/snapcraft.yaml b/resources/strict/snapcraft.yaml
+index 7eb96537418c2567039d98569615d8415e91e8d0..35a341c1d40a00730d624330abffadb0b1542958 100644
+--- a/resources/strict/snapcraft.yaml
++++ b/resources/strict/snapcraft.yaml
+@@ -4,13 +4,13 @@ summary: App summary
+ description: |
+   App description
+ 
+-base: core18
++base: core22
+ confinement: strict
+ grade: devel
+ 
+ apps:
+   electronApp:
+-    extensions: [gnome-3-34]
++    extensions: [gnome]
+     plugs:
+       - browser-support
+       - desktop
+@@ -22,7 +22,6 @@ apps:
+       - wayland
+       - x11
+     environment:
+-      DISABLE_WAYLAND: "1"
+       TMPDIR: $XDG_RUNTIME_DIR
+ 
+ parts:
+diff --git a/src/launcher.js b/src/launcher.js
+index da117d0abede687706b817312251648b136e7ca9..17c430fdeb9f66a6c0dbcf9fea87f5f4fbc1c38a 100644
+--- a/src/launcher.js
++++ b/src/launcher.js
+@@ -44,7 +44,7 @@ function createDesktopLaunchCommand (data) {
+ 
+   const sandboxFlag = getBrowserSandboxFlag(data)
+ 
+-  return `bin/electron-launch $SNAP/${data.name}/${executableName} ${sandboxFlag}`
++  return `bin/electron-launch $SNAP/${data.name}/${executableName} ${sandboxFlag} %u`
+ }
+ 
+ module.exports = {
